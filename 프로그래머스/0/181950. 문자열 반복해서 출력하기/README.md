@@ -1,10 +1,10 @@
 # [level 0] 문자열 반복해서 출력하기 - 181950 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181950?language=csharp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181950?language=cpp) 
 
 ### 성능 요약
 
-메모리: 16.7 MB, 시간: 19.90 ms
+메모리: 4.21 MB, 시간: 1.70 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 05월 12일 13:35:00
+2024년 05월 29일 23:59:51
 
 ### 문제 설명
 
