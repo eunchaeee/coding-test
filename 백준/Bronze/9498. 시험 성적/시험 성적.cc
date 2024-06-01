@@ -9,15 +9,15 @@ int main()
     {
         cout << "A";    
     }
-    else if (score >= 80 && score <= 89)
+    else if (score >= 80)
     {
         cout << "B";
     }
-    else if (score >= 70 && score <= 79)
+    else if (score >= 70)
     {
         cout << "C";
     }
-    else if (score >= 60 && score <=69)
+    else if (score >= 60)
     {
         cout << "D";
     }
