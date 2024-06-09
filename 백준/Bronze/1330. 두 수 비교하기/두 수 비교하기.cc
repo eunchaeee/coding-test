@@ -1,16 +1,17 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    float a; float b;
+int main()
+{
+    int a, b;
     cin >> a >> b;
-    if (a>b) {
+    if (a>b){
         cout << '>';
     }
-    else if (a<b) {
+    else if (a<b){
         cout << '<';
     }
-    else {
+    else{
         cout << "==";
     }
     return 0;
