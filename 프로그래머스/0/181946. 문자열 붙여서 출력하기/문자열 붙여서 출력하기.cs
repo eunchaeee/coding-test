@@ -11,7 +11,6 @@ public class Example
 
         String s1 = input[0];
         String s2 = input[1];
-        Console.Write(s1);
-        Console.Write(s2);
+        Console.Write(s1+s2);
     }
 }
