@@ -8,10 +8,8 @@ public class Example
 
         Console.Clear();
         s = Console.ReadLine();
-        char[] sChar = s.ToCharArray();
-
         String result = "";
-        foreach (char c in sChar)
+        foreach (char c in s)
         {
             if (c >= 'a' && c <= 'z')
             {
