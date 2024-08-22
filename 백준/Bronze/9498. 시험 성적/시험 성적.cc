@@ -1,30 +1,29 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
-    int score;
-    cin >> score;
-    if (score >= 90 && score <=100)
+int main(){
+    int x;
+    cin>>x;
+    
+    if(x>=90)
     {
-        cout << "A";    
+        cout<<'A';
     }
-    else if (score >= 80)
+    else if(x>=80)
     {
-        cout << "B";
+        cout<<'B';
     }
-    else if (score >= 70)
+    else if(x>=70)
     {
-        cout << "C";
+        cout<<'C';
     }
-    else if (score >= 60)
+    else if(x>=60)
     {
-        cout << "D";
+        cout<<'D';
     }
     else
     {
-        cout << "F";
+        cout<<'F';
     }
-    
     return 0;
 }
