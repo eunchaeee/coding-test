@@ -1,22 +1,22 @@
 #include <iostream>
+#include <vector>
 #include <algorithm>
 using namespace std;
 
-int arr[1000001];
+vector<int> v;
 
-int main() {
-    int n;
-    cin>>n;
+int main(){
+    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
     
+    int n; cin>>n;
     for (int i=0; i<n; i++){
-        cin>>arr[i];
+        int x; cin>>x;
+        v.push_back(x);
     }
-
-    sort(arr, arr+n);
     
-    for (int i=0; i<n; i++){
-        cout<<arr[i]<<'\n';
-    }
+    sort(v.begin(), v.end());
+    
+    for (auto &k :v) cout<< k <<'\n';
     
     return 0;
 }
