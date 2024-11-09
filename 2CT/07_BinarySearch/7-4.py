@@ -1,4 +1,6 @@
-# 2. 부품 찾기
+"""
+2. 부품 찾기 : 이진 탐색 이용
+"""
 def binary_search(array, target, start, end):
     while start <= end:
         mid = (start + end) // 2
