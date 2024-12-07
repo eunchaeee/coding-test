@@ -14,53 +14,29 @@ def solution(n, build_frame):
     answer = []
     for x, y, a, b in build_frame:
         if b == 1:  # 설치될 때
-            if a == 0:  # 기둥일 때
-                if column_check(x, y, answer):
-                    answer.append([x, y, a])
-            else:   # 보일 때
-                if bo_check(x, y, answer):
-                    answer.append([x, y, a])
-        else:  # 삭제될 때
-            if a == 0:  # 기둥일 때
+            answer.append([x, y, a])
+            if not check(answer):
                 answer.remove([x, y, a])
-                delete_ok = True
-                if [x, y+1, 1] in answer:
-                    delete_ok = bo_check(x, y+1, answer)
-                if [x, y+1, 0] in answer:
-                    delete_ok = column_check(x, y+1, answer)
-                if [x-1, y+1, 1] in answer:
-                    delete_ok = bo_check(x-1, y+1, answer)
-
-                if not delete_ok:
-                    answer.append([x, y, a])
-
-            else:  # 보 일 때
-                answer.remove([x, y, a])
-                delete_ok = True
-                if [x-1, y, 1] in answer:
-                    delete_ok = bo_check(x-1, y, answer)
-                if [x, y, 0] in answer:
-                    delete_ok = column_check(x, y, answer)
-                if [x+1, y, 0] in answer:
-                    delete_ok = column_check(x+1, y, answer)
-                if [x+1, y, 1] in answer:
-                    delete_ok = bo_check(x+1, y, answer)
-
-                if not delete_ok:
-                    answer.append([x, y, a])
-
+        else: # 삭제될 때
+            answer.remove([x, y, a])
+            if not check(answer):
+                answer.append([x, y, a])
     answer.sort(key = lambda x: (x[0], x[1], x[2]))
     return answer
 
-def column_check(x, y, answer):
-    if y == 0 or [x, y, 1] in answer or [x - 1, y, 1] in answer or [x, y - 1, 0] in answer:
-        return True
-    return False
+def check(answer):
+    for x, y, a in answer:
+        if a == 0:  # 기둥일 때
+            if y == 0 or [x, y, 1] in answer or [x - 1, y, 1] in answer or [x, y - 1, 0] in answer:
+                continue
+            return False
+        else:  # 보일 때
+            if [x, y - 1, 0] in answer or [x + 1, y - 1, 0] in answer or (
+                    [x - 1, y, 1] in answer and [x + 1, y, 1] in answer):
+                continue
+            return False
+    return True
 
-def bo_check(x, y, answer):
-    if [x, y - 1, 0] in answer or [x + 1, y - 1, 0] in answer or ([x - 1, y, 1] in answer and [x + 1, y, 1] in answer):
-        return True
-    return False
 
 print(solution(5, [[1,0,0,1],[1,1,1,1],[2,1,0,1],[2,2,1,1],[5,0,0,1],[5,1,0,1],[4,2,1,1],[3,2,1,1]]))
 print(solution(5, [[0,0,0,1],[2,0,0,1],[4,0,0,1],[0,1,1,1],[1,1,1,1],[2,1,1,1],[3,1,1,1],[2,0,0,0],[1,1,1,0],[2,2,0,1]]))
