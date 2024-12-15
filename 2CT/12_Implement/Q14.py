@@ -1,8 +1,17 @@
 """
 외벽 점검
+가장 많은 weak를 포함하는 coverage 구하고, 그 이상의 수가 dist에 있는지 확인하고
+없다면 가장 멀리 떨어진거 버리고 반복하기
 """
+from itertools import combinations
 
 def solution(n, weak, dist):
+    # 친구 수를 늘려가면서 생각
+    for i in range(1, len(dist)):
+        # 거리 계산
+        for c in list(combinations(range(len(weak)),i)):
+            print(c, len(c))
+    return
     answer = 0
     weak_count = len(weak)
     c = []
@@ -27,5 +36,5 @@ def solution(n, weak, dist):
     return answer
 
 
-print(solution(12, [1, 5, 6, 10], [1, 2, 3, 4]))
-print(solution(12, [1, 3, 4, 9, 10], [3, 5, 7]))
+print(solution(12, [1, 5, 6, 10], [1, 2, 3, 4])) # 2
+#print(solution(12, [1, 3, 4, 9, 10], [3, 5, 7])) # 1
