@@ -6,11 +6,29 @@
 from itertools import combinations
 
 def solution(n, weak, dist):
-    # 친구 수를 늘려가면서 생각
+    # 친구 수를 늘려가면서 생각(몇명으로 커버될지)
     for i in range(1, len(dist)):
-        # 거리 계산
-        for c in list(combinations(range(len(weak)),i)):
-            print(c, len(c))
+        print("친구 수 ", i)
+        # 끊어줄 곳 정하기
+        min_far = 987654321
+
+        for cut in list(combinations(range(len(weak)),i)):
+            # 친구가 1명 필요할 때
+            if len(cut) ==  1:
+                idx = cut[0]
+                if idx == 0:
+                    far = weak[idx-1] - weak[idx]
+                else:
+                    far = n - (weak[idx] - weak[idx-1])
+                # 최소로 움직여야 하는 거리 계산
+                if min_far  > far:
+                    min_far = far
+            for d in dist:
+                if d >= min_far:
+                    return 1
+            print(cut)
+
+            # 친구가 2명 이상 필요할 때
     return
     answer = 0
     weak_count = len(weak)
