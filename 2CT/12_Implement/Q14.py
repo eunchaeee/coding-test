@@ -6,6 +6,23 @@
 from itertools import combinations
 
 def solution(n, weak, dist):
+    # 간격 구하기
+    far = []
+    for i in range(len(weak)):
+        if i + 1 == len(weak):
+            far.append(n - weak[i] + weak[0])
+        else:
+            far.append(weak[i+1] - weak[i])
+
+    far.index(max(far))
+    far.remove(max(far))
+    if sum(far) <= dist[-1]:
+        return 1
+    else:
+
+
+
+def solution_old(n, weak, dist):
     # 친구 수를 늘려가면서 생각(몇명으로 커버될지)
     for i in range(1, len(dist)):
         print("친구 수 ", i)
@@ -55,4 +72,4 @@ def solution(n, weak, dist):
 
 
 print(solution(12, [1, 5, 6, 10], [1, 2, 3, 4])) # 2
-#print(solution(12, [1, 3, 4, 9, 10], [3, 5, 7])) # 1
+print(solution(12, [1, 3, 4, 9, 10], [3, 5, 7])) # 1
