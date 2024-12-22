@@ -6,19 +6,44 @@
 from itertools import combinations
 
 def solution(n, weak, dist):
-    # 간격 구하기
-    far = []
+    # 간격(apart) 구하기
+    apart = []
     for i in range(len(weak)):
         if i + 1 == len(weak):
-            far.append(n - weak[i] + weak[0])
+            apart.append(n - weak[i] + weak[0])
         else:
-            far.append(weak[i+1] - weak[i])
+            apart.append(weak[i+1] - weak[i])
 
-    far.index(max(far))
-    far.remove(max(far))
-    if sum(far) <= dist[-1]:
-        return 1
-    else:
+    print(apart)
+    # dist에 원소가 남아있으면 계속 진행
+    while dist:
+        # 가장 큰 dist 꺼내기
+        current_dist = dist.pop()
+        sum = 0
+        count = 0
+        indices = []
+        # apart의 첫 원소부터 계산
+        for start in range(len(apart)):
+            i = 0
+            # 여기서 start + i 가 전체 인덱스 개수보다 커졌을 때 0부터 초기화되도록 해야하고, 이때 초기화한 인덱스가 start를 넘어서면 지금까지 사용한? 친구의 수만큼 return.
+            while True:
+                # 다음 원소를 더한 것이 현재 친구의 이동거리(current_dist)보다 커지면 break
+                if sum + apart[start + i] > current_dist:
+                    break
+                # 그렇지 않으면 다음 원소도 더한다.
+                else:
+                    sum += apart[start + i]
+                    i += 1
+            # i+1는 원소 개수가 됨.
+            # indices = list(range(start, i+1))
+            # if count < i + 1:
+            #     count = i + 1
+            # elif count == i + 1:
+
+
+
+
+    return -1
 
 
 
