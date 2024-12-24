@@ -22,7 +22,7 @@ def solution(n, weak, dist):
                     break
                 now = now + f
 
-                # 끝까지 점검했는가?
+                # 끝까지 점검했는가? <= 여기 로직 안타면 answer = len(dist) + 1의 값이 유지됨.
                 if now >= new_weak[-1]:
                     answer = f_cnt
                     break
@@ -33,7 +33,7 @@ def solution(n, weak, dist):
                             now = w
                             break
 
-    if answer > len(dist):  # 이 경우는 언제 있는거지??....
+    if answer > len(dist):  # 끝까지 점검 못했을 경우
         return -1
     else:
         return answer
