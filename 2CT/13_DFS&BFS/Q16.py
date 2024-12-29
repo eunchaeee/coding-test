@@ -25,26 +25,18 @@ for i in range(n):
         elif graph[i][j] == 2:
             viruses.append((i, j))
 
-origin_graph = copy.deepcopy(graph)
-#print(graph)
-print(zeros)
-print(viruses)
-
-
 combs = list(combinations(zeros, 3))
-
 dx = [1, -1, 0, 0]
 dy = [0, 0, 1, -1]
 
 final_count = 0
 
 for c in combs:
-    graph = origin_graph
+    copy_graph = copy.deepcopy(graph)
     count = 0
     # 벽 세우기
     for x, y in c:
-        graph[x][y] = 1
-    print('초기', graph)
+        copy_graph[x][y] = 1
     for i, j in viruses:
         queue = deque([(i, j)])
         while queue:
@@ -55,13 +47,12 @@ for c in combs:
 
                 if nx < 0 or nx >= n or ny < 0 or ny >= m:
                     continue
-                if graph[nx][ny] == 0:
+                if copy_graph[nx][ny] == 0:
                     queue.append((nx, ny))
-                    graph[nx][ny] = 2
-    print(graph)
+                    copy_graph[nx][ny] = 2
     for i in range(n):
         for j in range(m):
-            if graph[i][j] == 0:
+            if copy_graph[i][j] == 0:
                 count += 1
     final_count = max(final_count, count)
 
