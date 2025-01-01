@@ -20,6 +20,30 @@ def solution(p):
         else:
             r_count += 1
             u += p[i]
-    print('u :', u, 'v :', v)
-    answer = ''
-    return answer
+
+    if right_letters(u):
+        return u + solution(v)
+    else:
+        tu = ""
+        if len(u) > 2:
+            for i in u[1:-1]:
+                if i == '(':
+                    tu += ')'
+                else:
+                    tu += '('
+        return '(' + solution(v) + ')' + tu
+
+def right_letters(p):
+    check = 0
+    for i in range(len(p)):
+        if check < 0:
+            return False
+        if p[i] == '(':
+            check += 1
+        else:
+            check -= 1
+    return True
+
+# print(solution('(()())()'))
+# print(solution(')('))
+print(solution('()))((()'))
