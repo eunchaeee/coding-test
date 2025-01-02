@@ -16,8 +16,8 @@ for i in range(4):
     for _ in range(operator_counts[i]):
         operators.append(i)
 
-max_answer = -1e10
-min_answer = 1e10
+max_answer = int(-1e9)
+min_answer = int(1e9)
 
 for perms in list(permutations(operators)):
     answer = numbers[0]
