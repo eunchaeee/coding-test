@@ -63,13 +63,13 @@ def solution(teachers, graph):
             elif find_student(graph, x, y, dx[i], dy[i]):
                 candidates.add((x + dx[i], y + dy[i]))
 
-    for combs in list(combinations(candidates, 3)):
+    for combs in list(combinations(candidates, min(3, len(candidates)))):
         # 그래프 카피하기
         graph_copied = copy.deepcopy(graph)
         # 장애물 세우기
-        graph_copied[combs[0][0]][combs[0][1]] = 'O'
-        graph_copied[combs[1][0]][combs[1][1]] = 'O'
-        graph_copied[combs[2][0]][combs[2][1]] = 'O'
+        for a, b in combs:
+            graph_copied[a][b] = 'O'
+
         answer = "YES"
         # 각 선생님 별로 학생 확인하기
         for tx, ty in teachers:
@@ -83,8 +83,8 @@ def solution(teachers, graph):
             # 학생 발견되었으므로 이번 경우 탈출
             if answer == "NO":
                 break
-
         if answer == "YES":
             return answer
+    return answer
 
 print(solution(teachers, graph))
