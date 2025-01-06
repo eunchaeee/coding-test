@@ -8,25 +8,50 @@ graph = []
 for i in range(n):
     graph.append(list(map(int, input().split())))
 
-print(graph)
+def union_checked(i, j):
+    global total_union
+    answer = False
+    for union in total_union:
+        if (i, j) in union:
+            answer = True
+    return answer
 
-def union(graph):
-    visited = [[False] * n] * n
+def check_people(graph, x, y, union, visited):
+    visited[x][y] = True
+    print('check_people', x, y, visited)
+
     dx = [1, -1, 0, 0]
     dy = [0, 0, 1, -1]
-    for i in range(n):
-        for j in range(n):
-            if not visited[i][j]:
-                for i in range(4):
-                    nx = i + dx[i]
-                    ny = j + dy[i]
-                    if nx < 0 or nx >= n or ny < 0 or ny >= n:
-                        continue
-                    diff = abs(graph[i][j] - graph[nx][ny])
-                    if diff >= l and diff <= r:
-                        
+    for i in range(4):
+        nx = x + dx[i]
+        ny = y + dy[i]
+        print(nx, ny, visited)
 
-    return
+        if nx < 0 or nx >= n or ny < 0 or ny >= n:
+            continue
+        if visited[nx][ny]:
+            continue
+        if union_checked(nx, ny):
+            continue
+        if (nx, ny) in union:
+            continue
+        #visited[nx][ny] = True
 
-visited = [[False] * n] * n
-print(visited)
+        diff = abs(graph[nx][ny] - graph[x][y])
+
+        if r >= diff >= l:
+            union.append((nx, ny))
+            check_people(graph, nx, ny, union, visited)
+    return union
+
+def union(graph):
+    visited = [[False for _ in range(n)] for _ in range(n)]
+    global total_union
+    for x in range(n):
+        for y in range(n):
+            if not union_checked(x, y):
+                total_union.append(check_people(graph, x, y, [(x, y)], visited))
+    return total_union
+
+total_union = []
+print(union(graph))
