@@ -1,57 +1,62 @@
 """
 16234. 인구 이동
 """
-# n : 칸 수, l : 최소 인구차, r : 최대 인구차
+from collections import deque
+import sys
+
+input = sys.stdin.readline
 n, l, r = map(int, input().split())
 
 graph = []
-for i in range(n):
+for _ in range(n):
     graph.append(list(map(int, input().split())))
 
-def union_checked(i, j):
-    global total_union
-    answer = False
-    for union in total_union:
-        if (i, j) in union:
-            answer = True
-    return answer
-
-def check_people(graph, x, y, union, visited):
-    visited[x][y] = True
-    print('check_people', x, y, visited)
-
+def bfs(graph, x, y, visited):
     dx = [1, -1, 0, 0]
     dy = [0, 0, 1, -1]
-    for i in range(4):
-        nx = x + dx[i]
-        ny = y + dy[i]
-        print(nx, ny, visited)
 
-        if nx < 0 or nx >= n or ny < 0 or ny >= n:
-            continue
-        if visited[nx][ny]:
-            continue
-        if union_checked(nx, ny):
-            continue
-        if (nx, ny) in union:
-            continue
-        #visited[nx][ny] = True
-
-        diff = abs(graph[nx][ny] - graph[x][y])
-
-        if r >= diff >= l:
-            union.append((nx, ny))
-            check_people(graph, nx, ny, union, visited)
+    queue = deque([(x, y)])
+    union = [(x, y)]
+    visited[x][y] = True
+    while queue:
+        x, y = queue.popleft()
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
+            if nx < 0 or nx >= n or ny < 0 or ny >= n:
+                continue
+            diff = abs(graph[nx][ny] - graph[x][y])
+            if not visited[nx][ny]:
+                if l <= diff <= r:
+                    union.append((nx, ny))
+                    queue.append((nx, ny))
+                    visited[nx][ny] = True
     return union
 
-def union(graph):
-    visited = [[False for _ in range(n)] for _ in range(n)]
-    global total_union
-    for x in range(n):
-        for y in range(n):
-            if not union_checked(x, y):
-                total_union.append(check_people(graph, x, y, [(x, y)], visited))
-    return total_union
+count = 0
+visited = [[False for _ in range(n)] for _ in range(n)]
 
-total_union = []
-print(union(graph))
+while True:
+    total_union = []
+    visited = [[False for _ in range(n)] for _ in range(n)]
+
+    for i in range(n):
+        for j in range(n):
+            if not visited[i][j]:
+                u = bfs(graph, i, j, visited)
+                if len(u) > 0:
+                    total_union.append(u)
+
+    if len(total_union) == 0 or len(total_union) == n * n:
+        break
+    elif len(total_union) < n * n:
+        count += 1
+
+    for union in total_union:
+        average = 0
+
+        for x, y in union:
+            average += graph[x][y]
+        for x, y in union:
+            graph[x][y] = int(average/len(union))
+print(count)
