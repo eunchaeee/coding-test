@@ -2,6 +2,11 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/250137?language=python3) 
 
+### 회고
+- 내 풀이 방식 : 시간 흐름을 1초씩 시뮬레이션하여 for문을 돌림
+- 문제점 : 공격이 많은 경우 시간 초과가 날 수 있음
+- 개선점 : attacks 리스트를 활용하여 리스트 원소만큼만 계산되도록 짜자.
+
 ### 성능 요약
 
 메모리: 9.25 MB, 시간: 0.51 ms
@@ -18,7 +23,8 @@
 
 2025년 04월 10일 14:57:48
 
-### 문제 설명
+<details>
+<summary> 문제 설명</summary>
 
 <p>어떤 게임에는 <code>붕대 감기</code>라는 기술이 있습니다.</p>
 
@@ -377,6 +383,6 @@
 </tbody>
       </table>
 <p>몬스터의 마지막 공격 직후 캐릭터의 체력은 3입니다. 따라서 <code>3</code>을 return 해야 합니다.</p>
-
+</details>
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
