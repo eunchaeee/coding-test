@@ -61,3 +61,6 @@ class Solution:
 - `O(n log n)` — 정렬<b>(병목)</b>
 - `O(n)` — 투 포인터 이동
 - 총 `O(n log n)`
+
+## Tip
+굳이 리스트에서 copy, remove 안해도 그냥 인덱스만으로도 문제를 풀 수 있다~
