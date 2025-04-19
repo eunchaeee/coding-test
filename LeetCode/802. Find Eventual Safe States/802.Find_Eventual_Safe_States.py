@@ -36,6 +36,7 @@ class Solution:
         # 4. 안전한 노드들만 뽑아서 정렬된 리스트로 리턴
         return [i for i, v in enumerate(safe) if v]
 
+    # 시간초과 나는 코드
     def eventualSafeNodes2(self, graph: List[List[int]]) -> List[int]:
         answer = []
         # 1회전
