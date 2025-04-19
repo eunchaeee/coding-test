@@ -24,7 +24,7 @@ class Solution:
         answer = 0
         for i in range(len(sorted_costs)):
             coins -= sorted_costs[i]
-            if (coins < 0):
+            if coins < 0:
                 break
             answer += 1
         return answer
