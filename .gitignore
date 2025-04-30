@@ -1,0 +1,31 @@
+# ===== OS-specific files =====
+.DS_Store
+
+# ===== IDE settings =====
+.idea/
+.vscode/
+
+# ===== Build artifacts =====
+bin/
+obj/
+
+# ===== User-specific files =====
+*.user
+*.suo
+
+# ===== Logs =====
+*.log
+
+# ===== .NET artifacts =====
+*.dll
+*.exe
+*.pdb
+
+# ===== Rider (JetBrains) =====
+*.sln.iml
+.idea/
+*.DotSettings
+*.DotSettings.user
+
+# ===== VS Code Workspace =====
+*.code-workspace
