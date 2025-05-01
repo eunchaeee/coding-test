@@ -2,6 +2,9 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/388351) 
 
+## 회고
+변수명을 의미를 담아서 쓰면 디버깅이 쉽다!!!!!!!!!
+
 ### 성능 요약
 
 메모리: 31.5 MB, 시간: 0.30 ms
