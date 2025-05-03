@@ -3,7 +3,8 @@
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/388351) 
 
 ## 회고
-변수명을 의미를 담아서 쓰면 디버깅이 쉽다!!!!!!!!!
+- 변수명을 의미를 담아서 쓰면 디버깅이 쉽다!!!!!!!!!
+- loop, paging, 조건 간단하게 쓰는법
 
 ### 성능 요약
 
