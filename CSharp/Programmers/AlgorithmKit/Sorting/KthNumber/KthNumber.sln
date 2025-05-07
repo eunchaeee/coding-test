@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KthNumber", "KthNumber.csproj", "{46CCB69C-7AC9-46FF-931E-6BA4B77D5353}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46CCB69C-7AC9-46FF-931E-6BA4B77D5353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46CCB69C-7AC9-46FF-931E-6BA4B77D5353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46CCB69C-7AC9-46FF-931E-6BA4B77D5353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46CCB69C-7AC9-46FF-931E-6BA4B77D5353}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
