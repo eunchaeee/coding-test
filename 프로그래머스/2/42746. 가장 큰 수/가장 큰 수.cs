@@ -4,32 +4,16 @@ using System.Linq;
 public class Solution {
     public string solution(int[] numbers)
     {
-        if (numbers.All(c => c == 0)) return "0";
-        
-        int[] sorted = numbers.OrderByDescending((a) => a.ToString()).ToArray();
+        // 숫자를 문자열로 변환
+        string[] strNums = numbers.Select(n => n.ToString()).ToArray();
 
-        for (int i = 1; i < sorted.Length; i++)
-        {
-            int target = sorted[i];
-            int j = i - 1;
-            
-            while (j >= 0 && !Compare(sorted[j], target))
-            {
-                sorted[j + 1] = sorted[j];
-                j--;
-            }
+        // 커스텀 정렬: 두 수를 이어붙인 결과 중 큰 순서대로 정렬
+        Array.Sort(strNums, (a, b) => (b + a).CompareTo(a + b));
 
-            sorted[j + 1] = target;
-            //Console.WriteLine(string.Join(" ", sorted));
-        }
+        // 모든 숫자를 이어붙인 후, "000..." 방지 위해 int → string
+        string result = string.Join("", strNums);
+        if (result[0] == '0') return "0";  // 예: [0, 0, 0] 같은 경우
 
-        return string.Join("", sorted);
-    }
-
-    public bool Compare(int a, int b)
-    {
-        int smaller = int.Parse(b.ToString() + a.ToString());
-        int bigger = int.Parse(a.ToString() + b.ToString());
-        return smaller <= bigger;
+        return result;
     }
 }
