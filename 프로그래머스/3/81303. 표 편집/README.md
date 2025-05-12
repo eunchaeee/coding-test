@@ -2,6 +2,9 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/81303?language=python3) 
 
+## 회고
+<b>Linked List(앞뒤 참조를 가지는 자료구조)</b>
+
 ### 성능 요약
 
 메모리: 231 MB, 시간: 899.46 ms
