@@ -14,6 +14,58 @@ using System;
 
 class Result
 {
+    public static int cutTheTreeReview(List<int> data, List<List<int>> edges)
+    {
+        int n = data.Count;
+        int[] treeValues = new int[n + 1];
+
+        List<int>[] graph = new List<int>[n + 1];
+        for (int i = 1; i <= n; i++)
+        {
+            graph[i] = new List<int>();
+        }
+        
+        foreach (var edge in edges)
+        {
+            graph[edge[0]].Add(edge[1]);
+            graph[edge[1]].Add(edge[0]);
+        }
+
+        bool[] visited = new bool[n + 1];
+        // 아무 노드나 루트로 잡고 거기서부터 dfs
+        dfs(1, graph, treeValues, visited, data);
+        
+        int total = data.Sum();
+        int minDiff = int.MaxValue;
+        
+        for (int i = 1; i <= n; i++)
+        {
+            int diff = Math.Abs((total - treeValues[i]) - treeValues[i]);
+            minDiff = Math.Min(diff, minDiff);
+        }
+        
+        return minDiff;
+    }
+
+    public static int dfs(int node, List<int>[] graph, int[] treeValues, bool[] visited, List<int> data)
+    {
+        visited[node] = true;
+        int treeValue = data[node - 1];
+
+        foreach (int neighbor in graph[node])
+        {
+            if (!visited[neighbor])
+            {
+                treeValue += dfs(neighbor, graph, treeValues, visited, data);
+            }
+        }
+
+        treeValues[node] = treeValue;
+        return treeValue;
+    }
+
+
+
 
     /*
      * Complete the 'cutTheTree' function below.
@@ -29,7 +81,7 @@ class Result
      * 2. edges : 간선 정보
      */
     
-    public static int cutTheTree(List<int> data, List<List<int>> edges)
+    public static int cutTheTreeFirst(List<int> data, List<List<int>> edges)
     {
         // data : 0-indexed
         // others : 1-indexed
@@ -107,22 +159,52 @@ class Result
         // Console.WriteLine($"{cutNode + 1} {data[cutNode]}");
         return Math.Abs(total - 2 * treeValues[cutNode]);
     }
+
+    public static int cutTheTreeDFS(List<int> data, List<List<int>> edges)
+    {
+        int n = data.Count;
+        int total = data.Sum();
+        int minDiff = int.MaxValue;
+
+        List<int>[] graph = new List<int>[n + 1];
+        for (int i = 1; i < n + 1; i++)
+            graph[i] = new List<int>();
+
+        foreach (var edge in edges)
+        {
+            graph[edge[0]].Add(edge[1]);
+            graph[edge[1]].Add(edge[0]);
+        }
+
+        bool[] visited = new bool[n + 1];
+        int[] subtree = new int[n + 1];
+
+        Dfs(1);
+        return minDiff;
+    }
+
+    private static int Dfs(int node)
+    {
+        return 0;
+    }
 }
 
+// 코테에서 전역변수 많이안쓰지??
+// 트리는 DFS 로??
 class Solution
 {
     public static void Main(string[] args)
     {
         // ex1
-        List<int> data = [100, 200, 100, 500, 100, 600];
-        List<List<int>> edges = [[1, 2], [2, 3], [2, 5], [4, 5], [5, 6]];
+        // List<int> data = [100, 200, 100, 500, 100, 600];
+        // List<List<int>> edges = [[1, 2], [2, 3], [2, 5], [4, 5], [5, 6]];
         // ex2
-        //List<int> data = [1, 2, 3, 4, 5, 6];
-        //List<List<int>> edges = [[1, 2], [1, 3], [2, 6], [3, 4], [3, 5]];
+        List<int> data = [1, 2, 3, 4, 5, 6];
+        List<List<int>> edges = [[1, 2], [1, 3], [2, 6], [3, 4], [3, 5]];
         // ex3
         //List<int> data = [205, 573, 985, 242, 830, 514, 592, 263, 142, 915];
         //List<List<int>> edges = [[2, 8], [10, 5], [1, 7], [6, 9], [4, 3], [8, 10], [5, 1], [7, 6], [9, 4]];
-        int result = Result.cutTheTree(data, edges);
+        int result = Result.cutTheTreeReview(data, edges);
         Console.WriteLine(result);
     }
 }
