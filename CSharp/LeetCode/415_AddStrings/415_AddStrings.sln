@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "415_AddStrings", "415_AddStrings.csproj", "{A7D345F8-517D-445C-A3CC-0503F26F4855}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7D345F8-517D-445C-A3CC-0503F26F4855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7D345F8-517D-445C-A3CC-0503F26F4855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7D345F8-517D-445C-A3CC-0503F26F4855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7D345F8-517D-445C-A3CC-0503F26F4855}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
