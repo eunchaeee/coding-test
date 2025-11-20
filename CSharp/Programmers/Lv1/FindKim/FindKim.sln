@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindKim", "FindKim.csproj", "{F5917B9A-0CAB-4FF5-A449-B7F76471E45A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5917B9A-0CAB-4FF5-A449-B7F76471E45A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5917B9A-0CAB-4FF5-A449-B7F76471E45A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5917B9A-0CAB-4FF5-A449-B7F76471E45A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5917B9A-0CAB-4FF5-A449-B7F76471E45A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
