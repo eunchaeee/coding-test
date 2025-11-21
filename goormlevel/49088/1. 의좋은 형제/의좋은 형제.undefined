@@ -1,0 +1,16 @@
+import math;
+
+a, b = map(int, input().split());
+n = int(input());
+
+for i in range(n):
+	if (i % 2 == 0):
+		gift = math.ceil(a/2)
+		a -= gift
+		b += gift
+	else:
+		gift = math.ceil(b/2)
+		b -= gift
+		a += gift
+
+print (a, b)
