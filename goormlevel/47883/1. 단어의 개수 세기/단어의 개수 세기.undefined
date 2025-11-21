@@ -1,0 +1,4 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+li = list(input().split())
+print (len(li))
