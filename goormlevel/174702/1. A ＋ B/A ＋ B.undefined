@@ -1,4 +1,17 @@
-# -*- coding: utf-8 -*-
-# UTF-8 encoding when using korean
-a, b = map(int, input().split())
-print (a + b)
+using System;
+namespace goorm
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			string input = Console.ReadLine();
+		  string[] parts = input.Split();
+
+			int a = int.Parse(parts[0]);
+			int b = int.Parse(parts[1]);
+
+			Console.WriteLine(a+b);
+		}
+	}
+}
