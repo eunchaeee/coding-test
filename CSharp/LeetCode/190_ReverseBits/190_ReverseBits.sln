@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "190_ReverseBits", "190_ReverseBits\190_ReverseBits.csproj", "{867452E7-D7F0-4F26-9577-BF60BA3B7526}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{867452E7-D7F0-4F26-9577-BF60BA3B7526}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{867452E7-D7F0-4F26-9577-BF60BA3B7526}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{867452E7-D7F0-4F26-9577-BF60BA3B7526}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{867452E7-D7F0-4F26-9577-BF60BA3B7526}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
