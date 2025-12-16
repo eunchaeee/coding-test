@@ -1,34 +1,29 @@
 using System.Collections.Generic;
 
-public class Solution {
+public class Solution
+{
     public string[] solution(string[] strings, int n) 
     {
-        Dictionary<char, List<string>> dict = new Dictionary<char, List<string>>();
-
-        foreach (string s in strings)
-        {
-            if (dict.ContainsKey(s[n]))
-            {
-                dict[s[n]].Add(s);
-            }
-            else
-            {
-                dict[s[n]] = new List<string>() { s };
-            }
-        }
-
         List<string> answer = new List<string>();
-        
-        for (char i = 'a'; i <= 'z'; i++)
+        List<string>[] sort = new List<string>[26];
+
+        for (int i = 0; i < 26; i++)
         {
-            if (dict.ContainsKey(i))
-            {
-                var temp = dict[i];
-                temp.Sort();
-                answer.AddRange(temp);
-            }
+            sort[i] = new List<string>();
+        }
+        
+        foreach (var s in strings)
+        {
+            sort[s[n] -'a'].Add(s);
         }
 
+        for (int i = 0; i < 26; i++)
+        {
+            sort[i].Sort();
+            answer.AddRange(sort[i]);
+        }
+        
+        
         return answer.ToArray();
     }
 }
