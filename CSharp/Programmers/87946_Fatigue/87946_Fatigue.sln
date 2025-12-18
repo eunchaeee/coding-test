@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "87946_Fatigue", "87946_Fatigue.csproj", "{92CEB6EE-47BB-42FE-A879-F84156BA3A4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92CEB6EE-47BB-42FE-A879-F84156BA3A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92CEB6EE-47BB-42FE-A879-F84156BA3A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92CEB6EE-47BB-42FE-A879-F84156BA3A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92CEB6EE-47BB-42FE-A879-F84156BA3A4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
