@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "42840_MockExam", "42840_MockExam.csproj", "{D35F690E-9D6A-413C-B574-EBC7C47A61B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D35F690E-9D6A-413C-B574-EBC7C47A61B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D35F690E-9D6A-413C-B574-EBC7C47A61B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D35F690E-9D6A-413C-B574-EBC7C47A61B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D35F690E-9D6A-413C-B574-EBC7C47A61B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
