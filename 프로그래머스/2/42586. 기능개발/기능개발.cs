@@ -1,31 +1,39 @@
 using System;
 using System.Collections.Generic;
 
-public class Solution 
-{
-
-    public int[] solution(int[] progresses, int[] speeds) 
+public class Solution {
+    public int[] solution(int[] progresses, int[] speeds)
     {
-        List<int> answer = new List<int>();
         int n = progresses.Length;
+        List<int> result = new List<int>();
+
         int[] days = new int[n];
         for (int i = 0; i < n; i++)
         {
-            days[i] = ((100 - progresses[i]) + (speeds[i] - 1)) / speeds[i];
+            int remain = 100 - progresses[i];
+            days[i] = (remain + speeds[i] - 1) / speeds[i];
         }
 
-        int prev = 0;
-        while (prev < n)
+        List<int> answer = new List<int>();
+        int count = 1;
+        int current = days[0];
+        
+        for (int i = 1; i < n; i++)
         {
-            int follow = prev + 1;
-            while (follow < n && days[follow] <= days[prev])
+            if (days[i] <= current)
             {
-                follow++;
+                count++;
             }
-            answer.Add(follow - prev);
-            prev = follow;
+            else
+            {
+                answer.Add(count);
+                current = days[i];
+                count = 1;
+            }
         }
         
+        answer.Add(count);
+
         return answer.ToArray();
     }
 }
