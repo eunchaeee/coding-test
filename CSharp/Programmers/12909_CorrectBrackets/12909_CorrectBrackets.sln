@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12909_CorrectBrackets", "12909_CorrectBrackets.csproj", "{AC684DD9-4879-4A13-AB51-5193199E45B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC684DD9-4879-4A13-AB51-5193199E45B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC684DD9-4879-4A13-AB51-5193199E45B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC684DD9-4879-4A13-AB51-5193199E45B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC684DD9-4879-4A13-AB51-5193199E45B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
