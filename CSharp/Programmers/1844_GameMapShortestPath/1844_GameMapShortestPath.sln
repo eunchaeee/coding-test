@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1844_GameMapShortestPath", "1844_GameMapShortestPath.csproj", "{E691DC24-6139-4774-841E-450C108EE014}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E691DC24-6139-4774-841E-450C108EE014}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E691DC24-6139-4774-841E-450C108EE014}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E691DC24-6139-4774-841E-450C108EE014}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E691DC24-6139-4774-841E-450C108EE014}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
